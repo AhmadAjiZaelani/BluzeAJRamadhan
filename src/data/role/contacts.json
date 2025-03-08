@@ -1,0 +1,10 @@
+[
+    {
+        "displayName": "BluzeAJ",
+        "vcard": "BEGIN:VCARD\nVERSION:3.0\nFN:BluzeAJ\nN:BluzeAJ;;;\nTEL;waid=6285117057679:6285117057679\nEMAIL;TYPE=WORK:BluzeAJ@gmail.com\nADR;TYPE=HOME:;;11 Naitōmachi;Shinjuku City;Tokyo 160-0014;Jepang\nURL;TYPE=WORK:https://www.BluzeAJ.my.id\nORG:Science, Technology, Engineering\nTITLE:Science, Technology, Engineering\nNOTE:Love Yourself Don't Love Me.\nEND:VCARD"
+    },
+    {
+        "displayName": "BluzeAJ",
+        "vcard": "BEGIN:VCARD\nVERSION:3.0\nFN:BluzeAJ\nN:Mora;;;\nTEL;waid=6285117057679:6285117057679\nEMAIL;TYPE=WORK:BluzeAJ@example.com\nADR;TYPE=HOME:;;123 Wonderland Ave;Fantasy City;Dreamland 0000;Neverland\nURL;TYPE=WORK:https://www.BluzeAJ.my.id\nORG:AI Enthusiast\nTITLE:Assistant\nNOTE:Selalu senang membantu Kakak! Jangan sungkan untuk menghubungi BluzeAJ ya! 💖✨\nEND:VCARD"
+    }
+]
