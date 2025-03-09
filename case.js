@@ -5137,7 +5137,7 @@ break;
 			break;
 
 			case 'brat': {
-if (sender in Ditss.enhancer) return pesan(`Masih ada proses yang belum diselesaikan, mohon tunggu sampai proses selesai.`)
+if (sender in haruka.enhancer) return pesan(`Masih ada proses yang belum diselesaikan, mohon tunggu sampai proses selesai.`)
 
 const quo = args.length >= 1 ? args.join(" ") : m.quoted?.text || m.quoted?.caption || m.quoted?.description || null;
 if (!m.isGroup) return Reply('*`maybee` fitur ini hanya untuk di grup*')
