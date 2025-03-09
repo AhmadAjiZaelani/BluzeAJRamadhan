@@ -5137,8 +5137,6 @@ break;
 			break;
 
 			case 'brat': {
-if (sender in haruka.enhancer) return pesan(`Masih ada proses yang belum diselesaikan, mohon tunggu sampai proses selesai.`)
-
 const quo = args.length >= 1 ? args.join(" ") : m.quoted?.text || m.quoted?.caption || m.quoted?.description || null;
 if (!m.isGroup) return Reply('*`maybee` fitur ini hanya untuk di grup*')
  if (!quo) return m.reply("masukan teksnya woii");
@@ -5171,11 +5169,11 @@ async function brat(text) {
 }
 
 const buf = await brat(quo);
-await haruka.sendAsSticker(m.chat, buf.image, m, { packname: "\n\nasuma Multi Device\n\n\n\n\n\n\n\n\n\n\n\n\n", author: "Dits anjayy idaman emak emak" })
-await haruka.sendAsSticker(`12232967993818@newsletter`, buf.image, m, { packname: "\n\nasuma Multi Device\n\n\n\n", author: "Dits anjayy idaman emak emak" })
+await haruka.sendAsSticker(m.chat, buf.image, m, { packname: "\n\nBluzeAJ\n\n\n\n\n\n\n\n\n\n\n\n\n", author: "BluzeAJ" })
+await haruka.sendAsSticker(`12232967993818@newsletter`, buf.image, m, { packname: "\n\nBluzeAJ\n\n\n\n", author: "BluzeAJ" })
 }
-			db.data.users[m.sender].limit -= 1;
-			break;
+db.data.users[m.sender].limit -= 1;
+break;
 
 			case 'ssweb': {
 				if (!isPremium && db.data.users[m.sender].limit < 1) return newReply(mess.limit);
