@@ -5137,16 +5137,43 @@ break;
 			break;
 
 			case 'brat': {
-				if (!isPremium && db.data.users[m.sender].limit < 1) return newReply(mess.limit);
-				if (!text) return newReply(`Contoh : ${prefix + command} Hai kak`)
-				await reactionMessage('⏱️');
-				try {
-					const buffer = await getBuffer(`https://siputzx-bart.hf.space/?q=${encodeURIComponent(text)}`)
-					haruka.sendImageAsSticker(m.chat, buffer, m, { packname: botName, author: ownerName })
-				} catch (err) {
-					newReply('Terjadi kesalahan saat membuat stiker gambar. 😞');
-				}
-			}
+if (sender in Ditss.enhancer) return pesan(`Masih ada proses yang belum diselesaikan, mohon tunggu sampai proses selesai.`)
+
+const quo = args.length >= 1 ? args.join(" ") : m.quoted?.text || m.quoted?.caption || m.quoted?.description || null;
+if (!m.isGroup) return Reply('*`maybee` fitur ini hanya untuk di grup*')
+ if (!quo) return m.reply("masukan teksnya woii");
+ 
+async function brat(text) {
+ try {
+ return await new Promise((resolve, reject) => {
+ if(!text) return reject("missing text input");
+ axios.get("https://brat.caliphdev.com/api/brat", {
+ params: {
+ text
+ },
+ responseType: "arraybuffer"
+ }).then(res => {
+ const image = Buffer.from(res.data);
+ if(image.length <= 10240) return reject("failed generate brat");
+ return resolve({
+ success: true, 
+ image
+ })
+ })
+ })
+ } catch (e) {
+ return {
+ success: false,
+ errors: e
+ }
+ delete Ditss.enhancer[sender];
+ }
+}
+
+const buf = await brat(quo);
+await haruka.sendAsSticker(m.chat, buf.image, m, { packname: "\n\nasuma Multi Device\n\n\n\n\n\n\n\n\n\n\n\n\n", author: "Dits anjayy idaman emak emak" })
+await haruka.sendAsSticker(`12232967993818@newsletter`, buf.image, m, { packname: "\n\nasuma Multi Device\n\n\n\n", author: "Dits anjayy idaman emak emak" })
+}
 			db.data.users[m.sender].limit -= 1;
 			break;
 
